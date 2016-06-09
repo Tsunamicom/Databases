@@ -39,6 +39,7 @@ PLEASE MAKE THE SEE THE FOLLOWING FOR VALID COMMANDS:
 import sqlite3
 import sys
 import re
+import os.path
 
 
 ARGUMENT_2 = sys.argv[2]
@@ -56,6 +57,9 @@ def backup():
     db_backup.py backup database_name.db backup_name.sql
   """
   db_file = ARGUMENT_2
+  if not os.path.exists(db_file):
+    raise Exception('DATABASE FILE DOES NOT EXIST!')
+  
   db_test = db_check.search(db_file)
   if not db_test:
     raise AttributeError('THE SECOND ARGUMENT MUST BE A .DB FILE!')
