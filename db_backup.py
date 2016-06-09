@@ -94,6 +94,9 @@ def restore():
     db_backup.py restore backup_name.sql database_name.db
   """
   sql_file = ARGUMENT_2
+  if not os.path.exists(sql_file):
+    raise Exception('BACKUP FILE DOES NOT EXIST!')
+  
   sql_test = sql_check.search(sql_file)
   if not sql_test:
     raise AttributeError('THE SECOND ARGUMENT MUST BE A .SQL FILE!')
