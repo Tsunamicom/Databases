@@ -41,8 +41,8 @@ import sys
 import re
 
 
-ARGUMENT_1 = sys.argv[2]
-ARGUMENT_2 = sys.argv[3]
+ARGUMENT_2 = sys.argv[2]
+ARGUMENT_3 = sys.argv[3]
 
 db_check = re.compile(r'^.*.db$')
 sql_check = re.compile(r'^.*.sql$')
@@ -55,12 +55,12 @@ def backup():
   Run Script from CMD as follows:
     db_backup.py backup database_name.db backup_name.sql
   """
-  db_file = ARGUMENT_1
+  db_file = ARGUMENT_2
   db_test = db_check.search(db_file)
   if not db_test:
     raise AttributeError('THE SECOND ARGUMENT MUST BE A .DB FILE!')
 
-  sql_file = ARGUMENT_2
+  sql_file = ARGUMENT_3
   sql_test = sql_check.search(sql_file)
   if not sql_test:
     raise AttributeError('THE THIRD ARGUMENT MUST BE A .SQL FILE!')
@@ -89,12 +89,12 @@ def restore():
   Run Script from CMD as follows:
     db_backup.py restore backup_name.sql database_name.db
   """
-  sql_file = ARGUMENT_1
+  sql_file = ARGUMENT_2
   sql_test = sql_check.search(sql_file)
   if not sql_test:
     raise AttributeError('THE SECOND ARGUMENT MUST BE A .SQL FILE!')
 
-  db_file = ARGUMENT_2
+  db_file = ARGUMENT_3
   db_test = db_check.search(db_file)
   if not db_test:
     raise AttributeError('THE THIRD ARGUMENT MUST BE A .DB FILE!')
