@@ -4,7 +4,7 @@
 
 """
 ====================================================================
->>WELCOME TO THE DATABASE BACKUP AND RESTORATION SCRIPT v.0.0.1<<
+>>WELCOME TO THE DATABASE BACKUP AND RESTORATION SCRIPT v.0.0.5<<
 
   NOTE 1: IF NO DIRECTORY IS STATED IN COMMANDS,
           BACKUP WILL BE STORED IN SAME DIRECTORY
@@ -102,6 +102,9 @@ def restore():
     raise AttributeError('THE SECOND ARGUMENT MUST BE A .SQL FILE!')
 
   db_file = ARGUMENT_3
+  if os.path.exists(db_file):
+    raise Exception('DB FILE ALREADY EXISTS!')
+  
   db_test = db_check.search(db_file)
   if not db_test:
     raise AttributeError('THE THIRD ARGUMENT MUST BE A .DB FILE!')
