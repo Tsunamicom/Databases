@@ -4,7 +4,7 @@
 
 """
 ====================================================================
->>WELCOME TO THE DATABASE BACKUP AND RESTORATION SCRIPT v.0.0.5<<
+>>WELCOME TO THE DATABASE BACKUP AND RESTORATION SCRIPT v.0.0.6<<
 
   NOTE 1: IF NO DIRECTORY IS STATED IN COMMANDS,
           BACKUP WILL BE STORED IN SAME DIRECTORY
@@ -22,11 +22,12 @@
   NOTE 5: THE BACKUP FILE MUST BE .SQL EXTENSION
 
 ====================================================================
-PLEASE MAKE THE SEE THE FOLLOWING FOR VALID COMMANDS:
+PLEASE SEE THE FOLLOWING FOR VALID COMMANDS AND INSTRUCTIONS:
 
   TO BACKUP AN EXISTING DATABASE,
   RUN THIS COMMAND FROM THE COMMAND PROMPT:
-  > db_backup.py backup database_name.db backup_name.sql
+  EX1:  > db_backup.py backup database_name.db backup_name.sql
+  EX2:  > db_backup.py backup C:\test_dir\test.db C:\test_dir2\test.sql
 
   TO RESTORE A DATABASE FROM AN EXISTING BACKUP,
   RUN THIS COMMAND FROM THE COMMAND PROMPT:
