@@ -46,8 +46,8 @@ import os.path
 ARGUMENT_2 = sys.argv[2]
 ARGUMENT_3 = sys.argv[3]
 
-db_check = re.compile(r'^.*.db$')
-sql_check = re.compile(r'^.*.sql$')
+db_check = re.compile(r'^.*\.db$')
+sql_check = re.compile(r'^.*\.sql$')
 
 
 def backup():
